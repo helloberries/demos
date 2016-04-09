@@ -1,0 +1,118 @@
+@import url(normalize.css);
+@import "mixin";
+
+/* Variables */
+$header-height: 60px;
+$header-font-size: 30px;
+$nav-link-width: 200px;
+$nav-color: #a8a8a8;
+
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+}
+ul, li {
+  list-style: none;
+}
+
+/* FONT */
+header {
+  font-family: 'Spinnaker', Arial, monospace;
+}
+
+/* --------------------------------------- *\
+    #HEADER
+\* --------------------------------------- */
+header {
+  height: $header-height;
+  background-color: #666;
+
+  & .header {
+    width: 60%;
+    margin: 0 auto;
+    line-height: $header-height;
+    text-transform: uppercase;
+
+    & .logo {
+      float: left;
+      color: #fff;
+      font-size: $header-font-size;
+      letter-spacing: 3px;
+    }
+    & nav {
+      float: right;
+      & .nav-link {
+        position: relative;
+        display: inline-block;
+        width: $nav-link-width;
+        text-align: center;
+        
+        &:first-child {
+          padding-left: 0;
+        }
+
+        & a:link, & a:visited {
+          color: $nav-color;
+        }
+        & a:hover {
+          color: #fff;
+        }
+
+        & .nav-menu {
+          display: none;
+          position: absolute;
+          top: $header-height;
+          left: 0;
+          width: $nav-link-width * 2.5;
+          font-size: $header-font-size / 2;
+          background-color: #666;
+          border-top: 1px solid $nav-color;
+
+          //& .collection {
+          //  height: $header-height / 2;
+          //  line-height: $header-height / 2;
+          //
+          //  &:hover {
+          //    background-color: #a9a9a9;
+          //  }
+          //  &:hover a {
+          //    color: #fff;
+          //  }
+          //
+              
+          & dt {
+            width: 30%;
+            height: $header-height / 2;
+            line-height: $header-height / 2;
+            //padding-left: 10px;
+            float: left;
+            & a {
+              color: #fff;
+            }
+          }
+          & dd {
+            width: 70%;
+            height: $header-height / 2;
+            line-height: $header-height / 2;
+            display: inline-block;
+            float: right;
+            color: $nav-color;
+            text-align: left;
+            & a {
+              margin-right: 10px;
+
+              &:hover {
+                color: #fff;
+              }
+            }
+          }
+
+            }
+          }
+        }
+      }
+    }

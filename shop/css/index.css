@@ -1,0 +1,76 @@
+@import url(normalize.css);
+/* Variables */
+/* RESET */
+* {
+  margin: 0;
+  padding: 0; }
+
+a {
+  text-decoration: none; }
+
+ul, li {
+  list-style: none; }
+
+/* FONT */
+header {
+  font-family: 'Spinnaker', Arial, monospace; }
+
+/* --------------------------------------- *\
+    #HEADER
+\* --------------------------------------- */
+header {
+  height: 60px;
+  background-color: #666; }
+  header .header {
+    width: 60%;
+    margin: 0 auto;
+    line-height: 60px;
+    text-transform: uppercase; }
+    header .header .logo {
+      float: left;
+      color: #fff;
+      font-size: 30px;
+      letter-spacing: 3px; }
+    header .header nav {
+      float: right; }
+      header .header nav .nav-link {
+        position: relative;
+        display: inline-block;
+        width: 200px;
+        text-align: center; }
+        header .header nav .nav-link:first-child {
+          padding-left: 0; }
+        header .header nav .nav-link a:link, header .header nav .nav-link a:visited {
+          color: #a8a8a8; }
+        header .header nav .nav-link a:hover {
+          color: #fff; }
+        header .header nav .nav-link .nav-menu {
+          display: none;
+          position: absolute;
+          top: 60px;
+          left: 0;
+          width: 500px;
+          font-size: 15px;
+          background-color: #666;
+          border-top: 1px solid #a8a8a8; }
+          header .header nav .nav-link .nav-menu dt {
+            width: 30%;
+            height: 30px;
+            line-height: 30px;
+            float: left; }
+            header .header nav .nav-link .nav-menu dt a {
+              color: #fff; }
+          header .header nav .nav-link .nav-menu dd {
+            width: 70%;
+            height: 30px;
+            line-height: 30px;
+            display: inline-block;
+            float: right;
+            color: #a8a8a8;
+            text-align: left; }
+            header .header nav .nav-link .nav-menu dd a {
+              margin-right: 10px; }
+              header .header nav .nav-link .nav-menu dd a:hover {
+                color: #fff; }
+
+/*# sourceMappingURL=index.css.map */
