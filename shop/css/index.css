@@ -42,7 +42,7 @@ header {
           padding-left: 0; }
         header .header nav .nav-link a:link, header .header nav .nav-link a:visited {
           color: #a8a8a8; }
-        header .header nav .nav-link a:hover {
+        header .header nav .nav-link:hover a {
           color: #fff; }
         header .header nav .nav-link .nav-menu {
           display: none;

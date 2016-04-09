@@ -58,7 +58,7 @@ header {
         & a:link, & a:visited {
           color: $nav-color;
         }
-        & a:hover {
+        &:hover a {
           color: #fff;
         }
 
