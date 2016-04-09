@@ -45,7 +45,7 @@ header {
     }
     & nav {
       float: right;
-      & .nav-link {
+      & .nav {
         position: relative;
         display: inline-block;
         width: $nav-link-width;
@@ -58,7 +58,7 @@ header {
         & a:link, & a:visited {
           color: $nav-color;
         }
-        &:hover a {
+        &:hover .nav-link{
           color: #fff;
         }
 

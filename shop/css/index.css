@@ -33,18 +33,18 @@ header {
       letter-spacing: 3px; }
     header .header nav {
       float: right; }
-      header .header nav .nav-link {
+      header .header nav .nav {
         position: relative;
         display: inline-block;
         width: 200px;
         text-align: center; }
-        header .header nav .nav-link:first-child {
+        header .header nav .nav:first-child {
           padding-left: 0; }
-        header .header nav .nav-link a:link, header .header nav .nav-link a:visited {
+        header .header nav .nav a:link, header .header nav .nav a:visited {
           color: #a8a8a8; }
-        header .header nav .nav-link:hover a {
+        header .header nav .nav:hover .nav-link {
           color: #fff; }
-        header .header nav .nav-link .nav-menu {
+        header .header nav .nav .nav-menu {
           display: none;
           position: absolute;
           top: 60px;
@@ -53,14 +53,14 @@ header {
           font-size: 15px;
           background-color: #666;
           border-top: 1px solid #a8a8a8; }
-          header .header nav .nav-link .nav-menu dt {
+          header .header nav .nav .nav-menu dt {
             width: 30%;
             height: 30px;
             line-height: 30px;
             float: left; }
-            header .header nav .nav-link .nav-menu dt a {
+            header .header nav .nav .nav-menu dt a {
               color: #fff; }
-          header .header nav .nav-link .nav-menu dd {
+          header .header nav .nav .nav-menu dd {
             width: 70%;
             height: 30px;
             line-height: 30px;
@@ -68,9 +68,9 @@ header {
             float: right;
             color: #a8a8a8;
             text-align: left; }
-            header .header nav .nav-link .nav-menu dd a {
+            header .header nav .nav .nav-menu dd a {
               margin-right: 10px; }
-              header .header nav .nav-link .nav-menu dd a:hover {
+              header .header nav .nav .nav-menu dd a:hover {
                 color: #fff; }
 
 /*# sourceMappingURL=index.css.map */
