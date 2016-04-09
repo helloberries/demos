@@ -3,7 +3,10 @@
 /* RESET */
 * {
   margin: 0;
-  padding: 0; }
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
 
 a {
   text-decoration: none; }
@@ -57,7 +60,9 @@ header {
             width: 30%;
             height: 30px;
             line-height: 30px;
-            float: left; }
+            padding-right: 20px;
+            float: left;
+            text-align: right; }
             header .header nav .nav .nav-menu dt a {
               color: #fff; }
           header .header nav .nav .nav-menu dd {
