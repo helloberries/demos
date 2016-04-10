@@ -2,10 +2,16 @@
 @import "mixin";
 
 /* Variables */
+
+// HEADER
 $header-height: 60px;
 $header-font-size: 30px;
 $nav-link-width: 200px;
 $nav-color: #a8a8a8;
+
+// SECTION
+/** Breadcrumb*/
+$breadcrumb-height: 30px;
 
 /* RESET */
 * {
@@ -23,8 +29,12 @@ ul, li {
 }
 
 /* FONT */
-header {
-  font-family: 'Spinnaker', Arial, monospace;
+@font-face {
+	font-family: 'Spinnaker';
+	src: url('fonts/Spinnaker.eot');
+	src: url('fonts/Spinnaker.woff') format('woff'), url('fonts/Spinnaker.ttf') format('truetype'), url('fonts/Spinnaker.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 /* --------------------------------------- *\
@@ -32,6 +42,7 @@ header {
 \* --------------------------------------- */
 header {
   height: $header-height;
+  font-family: 'Spinnaker', Courier, monospace;
   background-color: #666;
 
   & .header {
@@ -53,7 +64,7 @@ header {
         display: inline-block;
         width: $nav-link-width;
         text-align: center;
-        
+
         &:first-child {
           padding-left: 0;
         }
@@ -75,18 +86,6 @@ header {
           background-color: #666;
           border-top: 1px solid $nav-color;
 
-          //& .collection {
-          //  height: $header-height / 2;
-          //  line-height: $header-height / 2;
-          //
-          //  &:hover {
-          //    background-color: #a9a9a9;
-          //  }
-          //  &:hover a {
-          //    color: #fff;
-          //  }
-          //
-              
           & dt {
             width: 30%;
             height: $header-height / 2;
@@ -120,3 +119,96 @@ header {
         }
       }
     }
+
+/* --------------------------------------- *\
+    #SECTION
+\* --------------------------------------- */
+.container {
+  width: 60%;
+  margin: 0 auto;
+
+  & .breadcrumb {
+    margin-top: $breadcrumb-height;
+
+    & .crumb {
+      position: relative;
+      display: inline-block;
+      padding-right: 20px;
+      height: $breadcrumb-height;
+      line-height: $breadcrumb-height;
+      font-family: 'Courier New', monospace;
+
+      & a:link, & a:visited {
+        text-transform: uppercase;
+        color: #666;
+      }
+      & a:hover {
+        color: #000;
+        border-bottom: 1px solid #000;
+      }
+      &:not(:last-child)::after {
+        position: absolute;
+        top: 30%;
+        right: 0;
+        content: '';
+        float: right;
+        display: block;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        border: 5px solid transparent;
+        border-left: 5px solid #666;
+      }
+    }
+  }
+  & .product {
+    width: 300px;
+    margin-top: $breadcrumb-height;
+
+    & .product-preview {
+
+      & .product-preview-img {
+        width: inherit;
+        height: 300px;
+      }
+      & .product-preview-img-sgroup {
+        margin: 0 auto;
+        margin-top: $header-height / 4;
+        width: 70%;
+
+        & .product-preview-img-s {
+          float: left;
+          width: 40px;
+          height: 40px;
+          margin: 0 auto;
+          @include opacity(.6);
+
+          &:hover {
+            @include opacity(1);
+            cursor: pointer;
+          }
+          &:first-child {
+            background: url(img/tennis-skirt-black.jpg) no-repeat;
+            background-size: cover;
+          }
+          &:nth-child(2) {
+            background: url(img/tennis-skirt-white.jpg) no-repeat;
+            background-size: cover;
+          }
+          &:nth-child(3) {
+            background: url(img/tennis-skirt-purple.jpg) no-repeat;
+            background-size: cover;
+          }
+          &:nth-child(4) {
+            background: url(img/tennis-skirt-red.jpg) no-repeat;
+            background-size: cover;
+          }
+          &:last-child {
+            background: url(img/tennis-skirt-navy.jpg) no-repeat;
+            background-size: cover;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,5 +1,6 @@
 @import url(normalize.css);
 /* Variables */
+/** Breadcrumb*/
 /* RESET */
 * {
   margin: 0;
@@ -15,14 +16,18 @@ ul, li {
   list-style: none; }
 
 /* FONT */
-header {
-  font-family: 'Spinnaker', Arial, monospace; }
-
+@font-face {
+  font-family: 'Spinnaker';
+  src: url("fonts/Spinnaker.eot");
+  src: url("fonts/Spinnaker.woff") format("woff"), url("fonts/Spinnaker.ttf") format("truetype"), url("fonts/Spinnaker.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
 /* --------------------------------------- *\
     #HEADER
 \* --------------------------------------- */
 header {
   height: 60px;
+  font-family: 'Spinnaker', Courier, monospace;
   background-color: #666; }
   header .header {
     width: 60%;
@@ -77,5 +82,75 @@ header {
               margin-right: 10px; }
               header .header nav .nav .nav-menu dd a:hover {
                 color: #fff; }
+
+/* --------------------------------------- *\
+    #SECTION
+\* --------------------------------------- */
+.container {
+  width: 60%;
+  margin: 0 auto; }
+  .container .breadcrumb {
+    margin-top: 30px; }
+    .container .breadcrumb .crumb {
+      position: relative;
+      display: inline-block;
+      padding-right: 20px;
+      height: 30px;
+      line-height: 30px;
+      font-family: 'Courier New', monospace; }
+      .container .breadcrumb .crumb a:link, .container .breadcrumb .crumb a:visited {
+        text-transform: uppercase;
+        color: #666; }
+      .container .breadcrumb .crumb a:hover {
+        color: #000;
+        border-bottom: 1px solid #000; }
+      .container .breadcrumb .crumb:not(:last-child)::after {
+        position: absolute;
+        top: 30%;
+        right: 0;
+        content: '';
+        float: right;
+        display: block;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        border: 5px solid transparent;
+        border-left: 5px solid #666; }
+  .container .product {
+    width: 300px;
+    margin-top: 30px; }
+    .container .product .product-preview .product-preview-img {
+      width: inherit;
+      height: 300px; }
+    .container .product .product-preview .product-preview-img-sgroup {
+      margin: 0 auto;
+      margin-top: 15px;
+      width: 70%; }
+      .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s {
+        float: left;
+        width: 40px;
+        height: 40px;
+        margin: 0 auto;
+        opacity: 0.6;
+        filter: alpha(opacity=60); }
+        .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:hover {
+          opacity: 1;
+          filter: alpha(opacity=100);
+          cursor: pointer; }
+        .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:first-child {
+          background: url(img/tennis-skirt-black.jpg) no-repeat;
+          background-size: cover; }
+        .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:nth-child(2) {
+          background: url(img/tennis-skirt-white.jpg) no-repeat;
+          background-size: cover; }
+        .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:nth-child(3) {
+          background: url(img/tennis-skirt-purple.jpg) no-repeat;
+          background-size: cover; }
+        .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:nth-child(4) {
+          background: url(img/tennis-skirt-red.jpg) no-repeat;
+          background-size: cover; }
+        .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:last-child {
+          background: url(img/tennis-skirt-navy.jpg) no-repeat;
+          background-size: cover; }
 
 /*# sourceMappingURL=index.css.map */
