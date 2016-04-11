@@ -1,26 +1,11 @@
 @import url(normalize.css);
 /* Variables */
 /** Breadcrumb*/
+/** product-preview*/
+/** product-dscp*/
 /* EXTENDS */
-.tennis-skirt-black, .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:first-child {
-  background: url(img/tennis-skirt-black.jpg) no-repeat;
-  background-size: cover; }
-
-.tennis-skirt-white, .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:nth-child(2) {
-  background: url(img/tennis-skirt-white.jpg) no-repeat;
-  background-size: cover; }
-
-.tennis-skirt-purple, .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:nth-child(3) {
-  background: url(img/tennis-skirt-purple.jpg) no-repeat;
-  background-size: cover; }
-
-.tennis-skirt-red, .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:nth-child(4) {
-  background: url(img/tennis-skirt-red.jpg) no-repeat;
-  background-size: cover; }
-
-.tennis-skirt-navy, .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:last-child {
-  background: url(img/tennis-skirt-navy.jpg) no-repeat;
-  background-size: cover; }
+.selected {
+  outline: 1px solid #666; }
 
 /* RESET */
 * {
@@ -36,6 +21,10 @@ a {
 ul, li {
   list-style: none; }
 
+input, button {
+  outline: none;
+  border: none; }
+
 /* FONT */
 @font-face {
   font-family: 'Spinnaker';
@@ -43,10 +32,33 @@ ul, li {
   src: url("fonts/Spinnaker.woff") format("woff"), url("fonts/Spinnaker.ttf") format("truetype"), url("fonts/Spinnaker.svg") format("svg");
   font-weight: normal;
   font-style: normal; }
+@font-face {
+  font-family: 'icomoon';
+  src: url("fonts/icomoon.eot?75rkc4");
+  src: url("fonts/icomoon.eot?75rkc4#iefix") format("embedded-opentype"), url("fonts/icomoon.ttf?75rkc4") format("truetype"), url("fonts/icomoon.woff?75rkc4") format("woff"), url("fonts/icomoon.svg?75rkc4#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+.icon-search:before {
+  content: "\e908"; }
+
 /* --------------------------------------- *\
     #HEADER
 \* --------------------------------------- */
 header {
+  position: relative;
   height: 60px;
   font-family: 'Spinnaker', Courier, monospace;
   background-color: #666; }
@@ -103,10 +115,32 @@ header {
               margin-right: 10px; }
               header .header nav .nav .nav-menu dd a:hover {
                 color: #fff; }
+  header .searchBox {
+    float: right;
+    position: absolute;
+    top: 15px;
+    right: 100px;
+    height: 100%; }
+    header .searchBox input {
+      position: absolute;
+      right: 0;
+      width: 200px;
+      height: 30px;
+      text-indent: 1em; }
+    header .searchBox i {
+      position: absolute;
+      z-index: 1;
+      top: 7.5px;
+      right: 7.5px;
+      color: #a8a8a8; }
 
 /* --------------------------------------- *\
     #SECTION
 \* --------------------------------------- */
+section {
+  width: 100%;
+  overflow: auto; }
+
 .container {
   width: 60%;
   margin: 0 auto; }
@@ -144,41 +178,200 @@ header {
       float: left; }
       .container .product .product-preview .product-preview-img {
         width: 300px;
-        height: 300px; }
-      .container .product .product-preview .product-preview-img-sgroup {
+        height: 400px; }
+        .container .product .product-preview .product-preview-img img {
+          width: inherit;
+          height: inherit; }
+      .container .product .product-preview .zoominBtn {
+        display: block;
+        height: 25px;
+        line-height: 25px;
         margin: 0 auto;
-        margin-top: 15px;
-        width: 70%; }
+        margin-top: 10px;
+        padding: 0 10px;
+        text-transform: uppercase;
+        font-family: "Britannic", monospace;
+        font-size: 14px;
+        color: #666;
+        background-color: #fff;
+        border: 1px solid #a8a8a8;
+        -webkit-border-radius: 10px;
+        -moz-border-radius: 10px;
+        border-radius: 10px; }
+        .container .product .product-preview .zoominBtn i {
+          margin-right: 5px; }
+      .container .product .product-preview .product-preview-img-sgroup {
+        width: inherit;
+        height: 40px;
+        margin-top: 15px; }
         .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s {
-          float: left;
-          width: 40px;
-          height: 40px;
-          margin: 0 auto;
-          opacity: 0.6;
-          filter: alpha(opacity=60); }
+          width: 70px;
+          height: inherit;
+          margin: 0 auto; }
           .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:hover {
-            opacity: 1;
-            filter: alpha(opacity=100);
             cursor: pointer; }
+          .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s img {
+            float: left;
+            display: inline-block;
+            width: 30px;
+            height: 100%;
+            margin-right: 10px; }
+            .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s img:last-child {
+              margin-right: 0; }
+        .container .product .product-preview .product-preview-img-sgroup #tennis-skirt-white, .container .product .product-preview .product-preview-img-sgroup #tennis-skirt-black, .container .product .product-preview .product-preview-img-sgroup #tennis-skirt-red, .container .product .product-preview .product-preview-img-sgroup #tennis-skirt-navy {
+          display: none; }
     .container .product .product-dscp {
       float: right;
-      width: 50%; }
-      .container .product .product-dscp .radioLab .labName {
-        display: block;
-        float: left; }
-      .container .product .product-dscp .radioLab .choosed-color {
-        display: block;
-        float: left; }
-      .container .product .product-dscp .radioLab .color-radio-div {
+      width: 50%;
+      font-family: "Britannic", monospace; }
+      .container .product .product-dscp .product-title, .container .product .product-dscp .price {
+        font-size: 20px; }
+      .container .product .product-dscp .labName {
+        font-family: "Britannic", monospace; }
+      .container .product .product-dscp .line {
         float: left;
-        width: 50px;
-        height: 50px;
-        margin-right: 10px;
-        background-color: #666; }
-        .container .product .product-dscp .radioLab .color-radio-div input {
-          width: 100%;
-          height: 100%;
-          opacity: 0;
-          filter: alpha(opacity=0); }
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: #aeaeae;
+        width: 100%;
+        margin: 10px 0; }
+      .container .product .product-dscp form {
+        width: 100%; }
+      .container .product .product-dscp .radioLab {
+        display: block;
+        float: left;
+        margin: 10px;
+        width: inherit;
+        height: auto; }
+        .container .product .product-dscp .radioLab .labName {
+          display: inline-block; }
+        .container .product .product-dscp .radioLab .choosed {
+          display: inline-block;
+          font-family: 'Arial', monospace;
+          text-transform: capitalize; }
+        .container .product .product-dscp .radioLab .color-choices {
+          width: inherit;
+          height: auto; }
+          .container .product .product-dscp .radioLab .color-choices .color-radio-div {
+            float: left;
+            width: 30px;
+            height: 30px;
+            margin-top: 10px;
+            margin-right: 10px;
+            border: 1px solid #a8a8a8; }
+            .container .product .product-dscp .radioLab .color-choices .color-radio-div:first-child {
+              background-color: #550D29; }
+            .container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(2) {
+              background-color: #fefefe; }
+            .container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(3) {
+              background-color: #000; }
+            .container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(4) {
+              background-color: #A02429; }
+            .container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(5) {
+              background-color: #12192F; }
+            .container .product .product-dscp .radioLab .color-choices .color-radio-div input {
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              filter: alpha(opacity=0);
+              cursor: pointer; }
+        .container .product .product-dscp .radioLab .size-choices {
+          width: 100%; }
+          .container .product .product-dscp .radioLab .size-choices .size-radio-div {
+            position: relative;
+            float: left;
+            width: 40px;
+            height: 30px;
+            margin-top: 10px;
+            margin-right: 10px;
+            line-height: 30px;
+            font-family: "Britannic", monospace;
+            text-align: center; }
+            .container .product .product-dscp .radioLab .size-choices .size-radio-div span {
+              position: absolute;
+              z-index: -1;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              border: 1px solid #a8a8a8;
+              -webkit-border-radius: 3px;
+              -moz-border-radius: 3px;
+              border-radius: 3px; }
+            .container .product .product-dscp .radioLab .size-choices .size-radio-div input {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              opacity: 0;
+              filter: alpha(opacity=0);
+              cursor: pointer; }
+      .container .product .product-dscp .textLab {
+        float: left;
+        display: block;
+        width: inherit;
+        height: auto;
+        margin: 10px; }
+        .container .product .product-dscp .textLab .quantity-div {
+          width: inherit;
+          height: auto; }
+          .container .product .product-dscp .textLab .quantity-div input {
+            width: 40px;
+            height: 30px;
+            margin-top: 10px;
+            margin-right: 10px;
+            text-align: center;
+            border: 1px solid #000;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px; }
+        .container .product .product-dscp .textLab .total-price {
+          width: inherit;
+          padding-top: 10px; }
+      .container .product .product-dscp .btnLab {
+        display: block;
+        float: left;
+        width: 100%;
+        height: auto;
+        margin: 10px; }
+        .container .product .product-dscp .btnLab button {
+          width: 180px;
+          height: 45px;
+          color: #fff;
+          background-color: #000; }
+      .container .product .product-dscp .shipping {
+        float: left;
+        width: 100%;
+        height: auto;
+        margin: 10px;
+        color: #666; }
+      .container .product .product-dscp .description {
+        float: left;
+        width: 100%;
+        height: auto;
+        margin: 10px; }
+        .container .product .product-dscp .description span {
+          display: block; }
+        .container .product .product-dscp .description .description-content {
+          margin-top: 10px;
+          font-family: 'Arial', monospace;
+          color: #666; }
+
+/* --------------------------------------- *\
+    #FOOTER
+\* --------------------------------------- */
+footer {
+  width: 100%;
+  height: 120px;
+  margin-top: 10px;
+  background-color: #666; }
+  footer .footer {
+    width: 60%;
+    margin: 0 auto;
+    padding-top: 60px;
+    text-align: center;
+    font-family: 'Spinnaker', monospace;
+    color: #a8a8a8; }
 
 /*# sourceMappingURL=index.css.map */
