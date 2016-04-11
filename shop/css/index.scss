@@ -2,16 +2,41 @@
 @import "mixin";
 
 /* Variables */
-
 // HEADER
 $header-height: 60px;
 $header-font-size: 30px;
 $nav-link-width: 200px;
 $nav-color: #a8a8a8;
-
 // SECTION
 /** Breadcrumb*/
 $breadcrumb-height: 30px;
+
+/* EXTENDS */
+//product-preview-img
+  .tennis-skirt-black {
+    background: url(img/tennis-skirt-black.jpg) no-repeat;
+    background-size: cover;
+  }
+  .tennis-skirt-white {
+    background: url(img/tennis-skirt-white.jpg) no-repeat;
+    background-size: cover;
+  }
+  .tennis-skirt-purple {
+    background: url(img/tennis-skirt-purple.jpg) no-repeat;
+    background-size: cover;
+  }
+  .tennis-skirt-red {
+    background: url(img/tennis-skirt-red.jpg) no-repeat;
+    background-size: cover;
+  }
+  .tennis-skirt-navy {
+    background: url(img/tennis-skirt-navy.jpg) no-repeat;
+    background-size: cover;
+  }
+  // .product-preview-img-on {
+  //   border: 1px solid #000;
+  // }
+
 
 /* RESET */
 * {
@@ -162,13 +187,14 @@ header {
     }
   }
   & .product {
-    width: 300px;
+    width: 100%;
     margin-top: $breadcrumb-height;
 
     & .product-preview {
+      float: left;
 
       & .product-preview-img {
-        width: inherit;
+        width: 300px;
         height: 300px;
       }
       & .product-preview-img-sgroup {
@@ -188,24 +214,47 @@ header {
             cursor: pointer;
           }
           &:first-child {
-            background: url(img/tennis-skirt-black.jpg) no-repeat;
-            background-size: cover;
+            @extend .tennis-skirt-black;
           }
           &:nth-child(2) {
-            background: url(img/tennis-skirt-white.jpg) no-repeat;
-            background-size: cover;
+            @extend .tennis-skirt-white;
           }
           &:nth-child(3) {
-            background: url(img/tennis-skirt-purple.jpg) no-repeat;
-            background-size: cover;
+            @extend .tennis-skirt-purple;
           }
           &:nth-child(4) {
-            background: url(img/tennis-skirt-red.jpg) no-repeat;
-            background-size: cover;
+            @extend .tennis-skirt-red;
           }
           &:last-child {
-            background: url(img/tennis-skirt-navy.jpg) no-repeat;
-            background-size: cover;
+            @extend .tennis-skirt-navy;
+          }
+        }
+      }
+    }
+    & .product-dscp {
+      float: right;
+      width: 50%;
+
+      & .radioLab {
+        & .labName {
+          display: block;
+          float: left;
+        }
+        & .choosed-color {
+          display: block;
+          float: left;
+        }
+        & .color-radio-div {
+          float: left;
+          width: 50px;
+          height: 50px;
+          margin-right: 10px;
+          background-color: #666;
+
+          & input {
+            width: 100%;
+            height: 100%;
+            @include opacity(0);
           }
         }
       }
