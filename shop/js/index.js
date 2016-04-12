@@ -22,7 +22,18 @@ $(function(){
       var src = $('.product-preview-img img').attr('src');
       var largeImg = $('<img />', {src: src});
       largeImg.css({'width': '100%', 'height': '100%'});
-      $.util.showPop(largeImg, 350, 467);
+      $(this).showPop({
+        'width': '350px',
+        'height': '467px',
+        'title':{
+          'display': 'none'
+        },
+        'content': '<img src="' + src + '">',
+        'contentCss': {
+          'width': '100%',
+          'height': '100%'
+        }
+      });
       e.preventDefault();
     });
     // 选择颜色
@@ -57,13 +68,30 @@ $(function(){
     });
     // 弹出订单信息
     $('#addToCart').click(function (e) {
-      // console.log('Color: ' + $('#color').text());
-      // console.log('Size: ' + $('#size').text());
-      // console.log('Quantity: ' + $('#quantity').val());
-      // console.log('Total price: ' + $('#totalPrice').text());
-      // console.log('Thank you for buying!!! :D');
       $(this).showPop({
-        'color': 'green'
+        'title': {
+          'titleName': 'Are you Sure?'
+        },
+        'width': '300px',
+        'height': '200px',
+        'containerCss': {
+          'padding': '10px',
+          'padding-top': parseInt('200px') * 0.2 + 10 + 'px',
+          'width': '100%',
+          'height': '100%',
+          'font-family': 'Courier New, sans-serif',
+          'text-transform': 'capitalize'
+        },
+        'content': '<p>'+'Color: ' + $('#color').text()+'</p>'+
+                   '<p>'+'Size: ' + $('#size').text()+'</p>'+
+                   '<p>'+'Quantity: ' + $('#quantity').val()+'</p>'+
+                   '<p>'+'Total price: ' + $('#totalPrice').text()+'</p>'+
+                   '<button>'+'yes'+'</button>'+
+                   '<button>'+'no'+'</button>',
+        'contentCss': {
+          'font-family': 'Courier New, sans-serif',
+          'text-transform': 'capitalize'
+        }
       });
       e.preventDefault();
     });

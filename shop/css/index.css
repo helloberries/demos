@@ -25,6 +25,9 @@ input, button {
   outline: none;
   border: none; }
 
+span {
+  display: inline-block; }
+
 /* FONT */
 @font-face {
   font-family: 'Spinnaker';
