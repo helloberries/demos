@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<header>
+    <div class="header">
+        <div class="logo">shop</div>
+        <nav>
+            <ul>
+                <li class="nav"><a  class="nav-link" href="#">home</a></li>
+                <li class="nav">
+                    <a  class="nav-link" href="#">collection</a>
+                    <dl class="nav-menu">
+                        <dt class="collection"><a href="#">women</a></dt>
+                        <dd>
+                            <a href="#">top</a>
+                            <a href="#">bottom</a>
+                            <a href="#">blouse</a>
+                            <a href="#">skirt</a>
+                        </dd>
+                        <dt class="collection"><a href="#">men</a></dt>
+                        <dd>
+                            <a href="#">top</a>
+                            <a href="#">bottom</a>
+                            <a href="#">jacket</a>
+                            <a href="#">jeans</a>
+                        </dd>
+                        <dt class="collection"><a href="#">accessories</a></dt>
+                        <dd>
+                            <a href="#">hat</a>
+                            <a href="#">necklace</a>
+                            <a href="#">earrings</a>
+                            <a href="#">ring</a>
+                        </dd>
+                        <dt class="collection"><a href="#">shoes</a></dt>
+                        <dd>
+                            <a href="#">sandals</a>
+                            <a href="#">sneakers</a>
+                            <a href="#">boots</a>
+                        </dd>
+                        <dt class="collection"><a href="#">bag</a></dt>
+                        <dd>
+                            <a href="#">backpack</a>
+                            <a href="#">purse</a>
+                            <a href="#">handbag</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="nav" ><a  class="nav-link" href="#">FAQ</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="searchBox">
+      <input type="search" id="search" placeholder="search...">
+      <i class="icon-search"></i>
+    </div>
+</header>
+<section>
+    <div class="detail-container">
+      <div class="breadcrumb">
+        <ul>
+          <li class="crumb"><a href="#">Home</a></li>
+          <li class="crumb"><a href="#">Women</a></li>
+          <li class="crumb"><a href="#">Bottom</a></li>
+          <li class="crumb"><a href="#">Skirt</a></li>
+          <li class="crumb">Tennis Skirt</li>
+        </ul>
+      </div>
+      <div class="product">
+        <div class="product-preview">
+          <div class="product-preview-img">
+            <img src="css/img/tennis-skirt-outfit-purple.jpg" alt="product-preview-img">
+          </div>
+          <button class="zoominBtn" id="zoominBtn" value="zoomin"><i class="icon-search"></i>zoom in</button>
+          <div class="product-preview-img-sgroup">
+            <div class="product-preview-img-s" id="tennis-skirt-purple">
+              <img class="selected" src="css/img/tennis-skirt-outfit-purple.jpg" alt="tennis-skirt-purple">
+              <img src="css/img/tennis-skirt-purple.jpg" alt="tennis-skirt-purple">
+            </div>
+            <div class="product-preview-img-s" id="tennis-skirt-white">
+              <img class="selected" src="css/img/tennis-skirt-outfit-white.jpg" alt="tennis-skirt-white">
+              <img src="css/img/tennis-skirt-white.jpg" alt="tennis-skirt-white">
+            </div>
+            <div class="product-preview-img-s" id="tennis-skirt-black">
+              <img class="selected" src="css/img/tennis-skirt-outfit-black.jpg" alt="tennis-skirt-black">
+              <img src="css/img/tennis-skirt-black.jpg" alt="tennis-skirt-black">
+            </div>
+            <div class="product-preview-img-s" id="tennis-skirt-red">
+              <img class="selected" src="css/img/tennis-skirt-outfit-red.jpg" alt="tennis-skirt-red">
+              <img src="css/img/tennis-skirt-red.jpg" alt="tennis-skirt-red">
+            </div>
+            <div class="product-preview-img-s" id="tennis-skirt-navy">
+              <img class="selected" src="css/img/tennis-skirt-outfit-navy.jpg" alt="tennis-skirt-navy">
+              <img src="css/img/tennis-skirt-navy.jpg" alt="tennis-skirt-navy">
+            </div>
+          </div>
+        </div>
+        <div class="product-dscp">
+          <h1 class="product-title">Tennis Skirt</h1>
+          <p class="price">$<span id="price">54.00</span></p>
+          <div class="line"></div>
+          <form action="post">
+            <label class="radioLab">
+              <span class="labName">Color: </span>
+              <span class="choosed choosed-color" id="color"></span>
+              <div class="color-choices">
+                <div class="color-radio-div"><input type="radio" name="color" value="purple"></div>
+                <div class="color-radio-div"><input type="radio" name="color" value="white"></div>
+                <div class="color-radio-div"><input type="radio" name="color" value="black"></div>
+                <div class="color-radio-div"><input type="radio" name="color" value="red"></div>
+                <div class="color-radio-div"><input type="radio" name="color" value="navy"></div>
+              </div>
+            </label>
+            <label class="radioLab">
+              <span class="labName">Size: </span>
+              <span class="choosed choosed-size" id="size"></span>
+              <div class="size-choices">
+                <div class="size-radio-div"><input type="radio" name="size" value="xs"><span>xs</span></div>
+                <div class="size-radio-div"><input type="radio" name="size" value="s"><span>s</span></div>
+                <div class="size-radio-div"><input type="radio" name="size" value="m"><span>m</span></div>
+                <div class="size-radio-div"><input type="radio" name="size" value="l"><span>l</span></div>
+              </div>
+            </label>
+            <label class="textLab">
+              <span class="labName">Quantity</span>
+              <div class="quantity-div">
+                <input type="text" id="quantity" name="quantity" value="1" maxlength="2">
+              </div>
+              <div class="total-price">
+                <span>Total price: </span>
+                <span id="totalPrice">$54.00</span>
+              </div>
+            </label>
+            <label class="btnLab">
+              <button type="submit" id="addToCart">Add to Cart</button>
+            </label>
+          </form>
+          <p class="shipping">Free Shipping Over $50.00 & Free Returns</p>
+          <div class="line"></div>
+          <p class="description">
+            <span class="description-title">Description</span>
+            <span class="description-content">
+              Stylish yet understated pleated women's tennis skirt constructed from a soft gabardine fabric.<br>• Garbadine (100% Polyester) construction • Zipper and button closure • Small is approximately 15 1/4" (38.7 cm) in total length
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+</section>
+<footer>
+  <div class="copyright">
+    <p>Copyright © 2016 Shop Inc.</p>
+  </div>
+</footer>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<script src="https://cdn.bootcss.com/jquery/3.0.0-beta1/jquery.min.js"></script>
+<script src="js/showPop.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

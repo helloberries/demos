@@ -11,6 +11,42 @@ $(function(){
     }).mouseout(function () {
         $('.nav-menu').hide();
     });
+    // 首页轮播图
+    var picArr = $('#slide img');
+    $('#slide').css('width', picArr.length * 711);
+    function next () {
+      $('#slide img:first-child').animate({
+        marginLeft: '-711px'
+      }, 1000, function () {
+        var temp = $(this).clone();
+        $(this).remove();
+        temp.css({marginLeft:'0'});
+        $('#slide').append(temp);
+      });
+    }
+    function prev () {
+      var temp = $('#slide img:first-child').clone();
+      $('#slide img:first-child').remove();
+      temp.css({marginLeft: '-711px'});
+      $('#slide').prepend(temp);
+      console.log($('#slide'));
+      $('#slide img:first-child').animate({
+        marginLeft: '0'
+      }, 1000);
+    }
+    var intervalObj = window.setInterval(next, 2000);
+    $('#slide-container').mouseover(function () {
+      window.clearInterval(intervalObj);
+    });
+    $('#slide-container').mouseout(function () {
+      intervalObj = window.setInterval(next, 2000);
+    });
+    $('#prev').click(function () {
+      prev();
+    });
+    $('#next').click(function () {
+      next();
+    });
     // 点击小图切换商品图
     $('.product-preview-img-s img').click(function () {
       var src = $(this).attr('src');
@@ -97,42 +133,3 @@ $(function(){
     });
 
 });
-
-$.util = {
-  showPop: function(popContent, popW, popH, titleName, titleH) {
-    // 创建透明背景
-    $('<div />', {id: 'popBg', class: 'popBg'}).appendTo('body');
-    // 创建浮出层
-    var $pop = $('<div />');
-    $pop.css({
-      'width': popW+'px',
-      'height': popH+'px',
-      'margin-left': -parseInt(popW/2)+'px',
-      'margin-top': -parseInt(popH/2)+'px'
-    });
-    // 创建标题
-    var $title = $('<span />');
-    $title.css({
-      'display': 'block',
-      'width': '100%',
-      'height': titleH+'px',
-      'padding': 10+'px',
-      'color': '#a8a8a8',
-      'background-color': '#666',
-      'font-family': '"Spinnaker", monospace'
-    });
-    var $titleName = $(titleName);
-    $title.text($titleName.text());
-    $title.appendTo($pop);
-    // 添加浮出层的内容
-    popContent.appendTo($pop);
-    $pop.attr({id: 'pop', class: 'pop'});
-    // 向body添加浮出层
-    $pop.appendTo('body');
-    // 点击页面，清除浮出层
-    $('#popBg').click(function () {
-      $(this).remove();
-      $('#pop').remove();
-    });
-  }
-};

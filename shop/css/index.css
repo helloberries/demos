@@ -92,6 +92,7 @@ header {
         header .header nav .nav .nav-menu {
           display: none;
           position: absolute;
+          z-index: 999;
           top: 60px;
           left: 0;
           width: 500px;
@@ -145,25 +146,81 @@ section {
   width: 100%;
   overflow: auto; }
 
-.container {
+.index-container {
+  width: 100%; }
+  .index-container .slide-container {
+    position: relative;
+    overflow: hidden;
+    width: 711px;
+    height: 400px;
+    margin: 0 auto; }
+    .index-container .slide-container .slide {
+      height: inherit; }
+      .index-container .slide-container .slide img {
+        float: left; }
+    .index-container .slide-container .buttons {
+      position: absolute;
+      z-index: 2;
+      left: 50%;
+      margin-left: -50px;
+      bottom: 20px;
+      width: 100;
+      height: 10px; }
+      .index-container .slide-container .buttons span {
+        float: left;
+        width: 10px;
+        height: 10px;
+        margin-right: 10px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.5);
+        border: 1px solid #eee;
+        cursor: pointer; }
+        .index-container .slide-container .buttons span .on {
+          background: red; }
+    .index-container .slide-container .arrow {
+      position: absolute;
+      z-index: 2;
+      top: 180px;
+      display: none;
+      width: 40px;
+      height: 40px;
+      line-height: 39px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      color: #fff;
+      background-color: rgba(0, 0, 0, 0.3);
+      cursor: pointer; }
+      .index-container .slide-container .arrow:hover {
+        background-color: rgba(0, 0, 0, 0.7); }
+    .index-container .slide-container #prev {
+      left: 20px; }
+    .index-container .slide-container #next {
+      right: 20px; }
+    .index-container .slide-container:hover .arrow {
+      display: block; }
+
+.detail-container {
   width: 60%;
   margin: 0 auto; }
-  .container .breadcrumb {
+  .detail-container .breadcrumb {
     margin-top: 30px; }
-    .container .breadcrumb .crumb {
+    .detail-container .breadcrumb .crumb {
       position: relative;
       display: inline-block;
       padding-right: 20px;
       height: 30px;
       line-height: 30px;
       font-family: 'Courier New', monospace; }
-      .container .breadcrumb .crumb a:link, .container .breadcrumb .crumb a:visited {
+      .detail-container .breadcrumb .crumb a:link, .detail-container .breadcrumb .crumb a:visited {
         text-transform: uppercase;
         color: #666; }
-      .container .breadcrumb .crumb a:hover {
+      .detail-container .breadcrumb .crumb a:hover {
         color: #000;
         border-bottom: 1px solid #000; }
-      .container .breadcrumb .crumb:not(:last-child)::after {
+      .detail-container .breadcrumb .crumb:not(:last-child)::after {
         position: absolute;
         top: 30%;
         right: 0;
@@ -175,18 +232,18 @@ section {
         overflow: hidden;
         border: 5px solid transparent;
         border-left: 5px solid #666; }
-  .container .product {
+  .detail-container .product {
     width: 100%;
     margin-top: 30px; }
-    .container .product .product-preview {
+    .detail-container .product .product-preview {
       float: left; }
-      .container .product .product-preview .product-preview-img {
+      .detail-container .product .product-preview .product-preview-img {
         width: 300px;
         height: 400px; }
-        .container .product .product-preview .product-preview-img img {
+        .detail-container .product .product-preview .product-preview-img img {
           width: inherit;
           height: inherit; }
-      .container .product .product-preview .zoominBtn {
+      .detail-container .product .product-preview .zoominBtn {
         display: block;
         height: 25px;
         line-height: 25px;
@@ -202,86 +259,86 @@ section {
         -webkit-border-radius: 10px;
         -moz-border-radius: 10px;
         border-radius: 10px; }
-        .container .product .product-preview .zoominBtn i {
+        .detail-container .product .product-preview .zoominBtn i {
           margin-right: 5px; }
-      .container .product .product-preview .product-preview-img-sgroup {
+      .detail-container .product .product-preview .product-preview-img-sgroup {
         width: inherit;
         height: 40px;
         margin-top: 15px; }
-        .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s {
+        .detail-container .product .product-preview .product-preview-img-sgroup .product-preview-img-s {
           width: 70px;
           height: inherit;
           margin: 0 auto; }
-          .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:hover {
+          .detail-container .product .product-preview .product-preview-img-sgroup .product-preview-img-s:hover {
             cursor: pointer; }
-          .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s img {
+          .detail-container .product .product-preview .product-preview-img-sgroup .product-preview-img-s img {
             float: left;
             display: inline-block;
             width: 30px;
             height: 100%;
             margin-right: 10px; }
-            .container .product .product-preview .product-preview-img-sgroup .product-preview-img-s img:last-child {
+            .detail-container .product .product-preview .product-preview-img-sgroup .product-preview-img-s img:last-child {
               margin-right: 0; }
-        .container .product .product-preview .product-preview-img-sgroup #tennis-skirt-white, .container .product .product-preview .product-preview-img-sgroup #tennis-skirt-black, .container .product .product-preview .product-preview-img-sgroup #tennis-skirt-red, .container .product .product-preview .product-preview-img-sgroup #tennis-skirt-navy {
+        .detail-container .product .product-preview .product-preview-img-sgroup #tennis-skirt-white, .detail-container .product .product-preview .product-preview-img-sgroup #tennis-skirt-black, .detail-container .product .product-preview .product-preview-img-sgroup #tennis-skirt-red, .detail-container .product .product-preview .product-preview-img-sgroup #tennis-skirt-navy {
           display: none; }
-    .container .product .product-dscp {
+    .detail-container .product .product-dscp {
       float: right;
       width: 50%;
       font-family: "Britannic", monospace; }
-      .container .product .product-dscp .product-title, .container .product .product-dscp .price {
+      .detail-container .product .product-dscp .product-title, .detail-container .product .product-dscp .price {
         font-size: 20px; }
-      .container .product .product-dscp .labName {
+      .detail-container .product .product-dscp .labName {
         font-family: "Britannic", monospace; }
-      .container .product .product-dscp .line {
+      .detail-container .product .product-dscp .line {
         float: left;
         border-bottom-width: 1px;
         border-bottom-style: solid;
         border-bottom-color: #aeaeae;
         width: 100%;
         margin: 10px 0; }
-      .container .product .product-dscp form {
+      .detail-container .product .product-dscp form {
         width: 100%; }
-      .container .product .product-dscp .radioLab {
+      .detail-container .product .product-dscp .radioLab {
         display: block;
         float: left;
         margin: 10px;
         width: inherit;
         height: auto; }
-        .container .product .product-dscp .radioLab .labName {
+        .detail-container .product .product-dscp .radioLab .labName {
           display: inline-block; }
-        .container .product .product-dscp .radioLab .choosed {
+        .detail-container .product .product-dscp .radioLab .choosed {
           display: inline-block;
           font-family: 'Arial', monospace;
           text-transform: capitalize; }
-        .container .product .product-dscp .radioLab .color-choices {
+        .detail-container .product .product-dscp .radioLab .color-choices {
           width: inherit;
           height: auto; }
-          .container .product .product-dscp .radioLab .color-choices .color-radio-div {
+          .detail-container .product .product-dscp .radioLab .color-choices .color-radio-div {
             float: left;
             width: 30px;
             height: 30px;
             margin-top: 10px;
             margin-right: 10px;
             border: 1px solid #a8a8a8; }
-            .container .product .product-dscp .radioLab .color-choices .color-radio-div:first-child {
+            .detail-container .product .product-dscp .radioLab .color-choices .color-radio-div:first-child {
               background-color: #550D29; }
-            .container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(2) {
+            .detail-container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(2) {
               background-color: #fefefe; }
-            .container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(3) {
+            .detail-container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(3) {
               background-color: #000; }
-            .container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(4) {
+            .detail-container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(4) {
               background-color: #A02429; }
-            .container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(5) {
+            .detail-container .product .product-dscp .radioLab .color-choices .color-radio-div:nth-child(5) {
               background-color: #12192F; }
-            .container .product .product-dscp .radioLab .color-choices .color-radio-div input {
+            .detail-container .product .product-dscp .radioLab .color-choices .color-radio-div input {
               width: 100%;
               height: 100%;
               opacity: 0;
               filter: alpha(opacity=0);
               cursor: pointer; }
-        .container .product .product-dscp .radioLab .size-choices {
+        .detail-container .product .product-dscp .radioLab .size-choices {
           width: 100%; }
-          .container .product .product-dscp .radioLab .size-choices .size-radio-div {
+          .detail-container .product .product-dscp .radioLab .size-choices .size-radio-div {
             position: relative;
             float: left;
             width: 40px;
@@ -291,7 +348,7 @@ section {
             line-height: 30px;
             font-family: "Britannic", monospace;
             text-align: center; }
-            .container .product .product-dscp .radioLab .size-choices .size-radio-div span {
+            .detail-container .product .product-dscp .radioLab .size-choices .size-radio-div span {
               position: absolute;
               z-index: -1;
               top: 0;
@@ -302,7 +359,7 @@ section {
               -webkit-border-radius: 3px;
               -moz-border-radius: 3px;
               border-radius: 3px; }
-            .container .product .product-dscp .radioLab .size-choices .size-radio-div input {
+            .detail-container .product .product-dscp .radioLab .size-choices .size-radio-div input {
               position: absolute;
               top: 0;
               left: 0;
@@ -311,16 +368,16 @@ section {
               opacity: 0;
               filter: alpha(opacity=0);
               cursor: pointer; }
-      .container .product .product-dscp .textLab {
+      .detail-container .product .product-dscp .textLab {
         float: left;
         display: block;
         width: inherit;
         height: auto;
         margin: 10px; }
-        .container .product .product-dscp .textLab .quantity-div {
+        .detail-container .product .product-dscp .textLab .quantity-div {
           width: inherit;
           height: auto; }
-          .container .product .product-dscp .textLab .quantity-div input {
+          .detail-container .product .product-dscp .textLab .quantity-div input {
             width: 40px;
             height: 30px;
             margin-top: 10px;
@@ -330,34 +387,34 @@ section {
             -webkit-border-radius: 3px;
             -moz-border-radius: 3px;
             border-radius: 3px; }
-        .container .product .product-dscp .textLab .total-price {
+        .detail-container .product .product-dscp .textLab .total-price {
           width: inherit;
           padding-top: 10px; }
-      .container .product .product-dscp .btnLab {
+      .detail-container .product .product-dscp .btnLab {
         display: block;
         float: left;
         width: 100%;
         height: auto;
         margin: 10px; }
-        .container .product .product-dscp .btnLab button {
+        .detail-container .product .product-dscp .btnLab button {
           width: 180px;
           height: 45px;
           color: #fff;
           background-color: #000; }
-      .container .product .product-dscp .shipping {
+      .detail-container .product .product-dscp .shipping {
         float: left;
         width: 100%;
         height: auto;
         margin: 10px;
         color: #666; }
-      .container .product .product-dscp .description {
+      .detail-container .product .product-dscp .description {
         float: left;
         width: 100%;
         height: auto;
         margin: 10px; }
-        .container .product .product-dscp .description span {
+        .detail-container .product .product-dscp .description span {
           display: block; }
-        .container .product .product-dscp .description .description-content {
+        .detail-container .product .product-dscp .description .description-content {
           margin-top: 10px;
           font-family: 'Arial', monospace;
           color: #666; }
@@ -368,9 +425,8 @@ section {
 footer {
   width: 100%;
   height: 120px;
-  margin-top: 10px;
   background-color: #666; }
-  footer .footer {
+  footer .copyright {
     width: 60%;
     margin: 0 auto;
     padding-top: 60px;
