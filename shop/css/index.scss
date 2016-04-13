@@ -17,6 +17,8 @@ $product-title-font-size: 20px;
 $product-dscp-margin: 10px;
 $product-dscp-font: 'Britannic',monospace;
 $product-dscp-radio-size: 30px;
+/** pop*/
+$popBtnWidth: 50px;
 
 
 /* EXTENDS */
@@ -497,17 +499,13 @@ footer {
 /* --------------------------------------- *\
     #POP
 \* --------------------------------------- */
-.pop {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  border: 1px solid #000;
-}
-.popBg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,.15);
+.popBtn {
+  float: left;
+  width: $popBtnWidth;
+  height: $popBtnWidth / 2;
+  margin-top: $popBtnWidth / 2;
+  margin-left: $popBtnWidth;
+  margin-right: 10px;
+  color: #fff;
+  background-color: #000;
 }

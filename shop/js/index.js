@@ -86,8 +86,8 @@ $(function(){
                    '<p>'+'Size: ' + $('#size').text()+'</p>'+
                    '<p>'+'Quantity: ' + $('#quantity').val()+'</p>'+
                    '<p>'+'Total price: ' + $('#totalPrice').text()+'</p>'+
-                   '<button>'+'yes'+'</button>'+
-                   '<button>'+'no'+'</button>',
+                   '<button class="popBtn">'+'yes'+'</button>'+
+                   '<button class="popBtn">'+'no'+'</button>',
         'contentCss': {
           'font-family': 'Courier New, sans-serif',
           'text-transform': 'capitalize'

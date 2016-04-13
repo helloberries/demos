@@ -7,6 +7,7 @@
         'display': 'block', // 如果不需要title,请设置'none'
         'titleName': 'WELCOME'
       },
+      
       'containerCss': {}, // 内容container的样式
       'content': '', // 填入html字符串
       'contentCss': {}, //设置内容的css样式
@@ -67,7 +68,7 @@
       popBg.click(clearPopBg);
     });
   };
-  // 私有方法：清除弹出层和幕布
+  // clearPopBg: 清除弹出层和幕布
   function clearPopBg () {
     $(this).children().remove();
     $(this).remove();
