@@ -7,7 +7,7 @@
         'display': 'block', // 如果不需要title,请设置'none'
         'titleName': 'WELCOME'
       },
-      
+
       'containerCss': {}, // 内容container的样式
       'content': '', // 填入html字符串
       'contentCss': {}, //设置内容的css样式
@@ -53,7 +53,7 @@
         'height': parseInt(settings.height) * 0.2 + 'px',
         'line-height': parseInt(settings.height) * 0.2 + 'px',
         'text-align': 'center',
-        'font-family': 'Britannic, monospace',
+        'font-family': '"Spinnaker", monospace',
         'color': '#fefefe',
         'background-color': '#000'
       });

@@ -13,10 +13,10 @@ $(function(){
     });
     // 首页轮播图
     var picArr = $('#slide img');
-    $('#slide').css('width', picArr.length * 711);
+    $('#slide').css('width', picArr.length * 800);
     function next () {
       $('#slide img:first-child').animate({
-        marginLeft: '-711px'
+        marginLeft: '-800px'
       }, 1000, function () {
         var temp = $(this).clone();
         $(this).remove();
@@ -27,9 +27,8 @@ $(function(){
     function prev () {
       var temp = $('#slide img:first-child').clone();
       $('#slide img:first-child').remove();
-      temp.css({marginLeft: '-711px'});
+      temp.css({marginLeft: '-800px'});
       $('#slide').prepend(temp);
-      console.log($('#slide'));
       $('#slide img:first-child').animate({
         marginLeft: '0'
       }, 1000);

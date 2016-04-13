@@ -15,7 +15,7 @@ $product-preview-img-width: 300px;
 /** product-dscp*/
 $product-title-font-size: 20px;
 $product-dscp-margin: 10px;
-$product-dscp-font: 'Britannic',monospace;
+$product-dscp-font: 'Spinnaker',monospace;
 $product-dscp-radio-size: 30px;
 /** pop*/
 $popBtnWidth: 50px;
@@ -90,7 +90,10 @@ span {
     #HEADER
 \* --------------------------------------- */
 header {
-  position: relative;
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  width: 100%;
   height: $header-height;
   font-family: 'Spinnaker', Courier, monospace;
   background-color: #666;
@@ -203,83 +206,200 @@ section {
 }
 .index-container {
   width: 100%;
+  margin: $header-height auto 0;
 
-  & .slide-container {
-    position: relative;
-    overflow: hidden;
-    width: 711px;
-    height: 400px;
-    margin: 0 auto;
+  & .slider {
+    width: 100%;
+    background-color: #f1f1f1;
 
-    & .slide {
-      // position: absolute;
-      // z-index: 1;
-      // top: 0;
-      height: inherit;
+    & .slide-container {
+      position: relative;
+      overflow: hidden;
+      width: 800px;
+      height: 450px;
+      margin: 0 auto;
 
-      & img {
-        float: left;
+      & .slide {
+        height: inherit;
+
+        & img {
+          float: left;
+        }
+      }
+      & .buttons {
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        margin-left: -50px;
+        bottom: 20px;
+        width: 100px;
+        height: 10px;
+
+        & span {
+          float: left;
+          width: 10px;
+          height: 10px;
+          margin-right: 10px;
+          @include border-radius(50%);
+          background: rgba(0, 0, 0, .5);;
+          border: 1px solid #eee;
+          cursor: pointer;
+
+          & .on {
+            background: red;
+          }
+        }
+      }
+      & .arrow {
+        position: absolute;
+        z-index: 2;
+        top: 180px;
+        display: none;
+        width: 40px;
+        height: 40px;
+        line-height: 39px;
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        color: #fff;
+        background-color: rgba(0, 0, 0, .3);
+        cursor: pointer;
+        &:hover {
+          background-color: rgba(0, 0, 0, .7);
+        }
+      }
+      #prev {
+        left: 20px;
+      }
+      #next {
+        right: 20px;
+      }
+      &:hover .arrow {
+        display: block;
       }
     }
-    & .buttons {
-      position: absolute;
-      z-index: 2;
-      left: 50%;
-      margin-left: -50px;
-      bottom: 20px;
-      width: 100;
-      height: 10px;
+  }
+  & .news {
+    width: 800px;
+    margin: $header-height auto 0;
 
-      & span {
-        float: left;
-        width: 10px;
-        height: 10px;
-        margin-right: 10px;
-        @include border-radius(50%);
-        background: rgba(0, 0, 0, .5);;
-        border: 1px solid #eee;
-        cursor: pointer;
+    & .hot-container {
+      float: left;
+      width: 50%;
+      height: 400px;
+      margin-bottom: $header-height;
 
-        & .on {
-          background: red;
+      & .hot {
+        width: 100%;
+        height: 50%;
+        margin-bottom: 20px;
+
+        & img {
+          float: left;
+          width: 50%;
+        }
+        & .hot-content {
+          float: left;
+          width: 40%;
+          margin-left: 10px;
+
+          & .hot-title {
+            position: relative;
+            font-family: 'Spinnaker', monospace;
+            text-transform: uppercase;
+            color: #fff;
+            background-color: #000;
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 200px;
+              height: 2px;
+              background-color: #000;
+            }
+          }
+          & .hot-news {
+            font-family: 'Spinnaker', monospace;
+
+            & a:link, a:visited {
+              display: inline-block;
+              width: 200px;
+              height: 60px;
+              padding-top: 10px;
+              padding-left: 5px;
+              color: #000;
+            }
+            & a:hover {
+              color: #fff;
+              background-color: rgba(0,0,0, 0.8);
+            }
+          }
         }
       }
     }
-    & .arrow {
-      position: absolute;
-      z-index: 2;
-      top: 180px;
-      display: none;
-      width: 40px;
-      height: 40px;
-      line-height: 39px;
-      text-align: center;
-      font-size: 36px;
-      font-weight: bold;
-      color: #fff;
-      background-color: rgba(0, 0, 0, .3);
-      cursor: pointer;
-      &:hover {
-        background-color: rgba(0, 0, 0, .7);
+    & .featured {
+      float: right;
+      width: 50%;
+      padding-left: 20px;
+
+      & img {
+        float: left;
+        width: 50%;
       }
-    }
-    #prev {
-      left: 20px;
-    }
-    #next {
-      right: 20px;
-    }
-    &:hover .arrow {
-      display: block;
+      & .hot-content {
+        float: left;
+        width: 40%;
+        margin-left: 10px;
+
+        & .hot-title {
+          position: relative;
+          font-family: 'Spinnaker', monospace;
+          text-transform: uppercase;
+          color: #fff;
+          background-color: #000;
+          &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            height: 2px;
+            background-color: #000;
+          }
+        }
+        & .article-title {
+          font-family: 'Spinnaker', monospace;
+          text-transform: uppercase;
+
+          & a:link, a:visited {
+            display: inline-block;
+            width: 200px;
+            height: 60px;
+            padding-top: 10px;
+            padding-left: 5px;
+            color: #000;
+          }
+          & a:hover {
+            color: #fff;
+            background-color: rgba(0,0,0, 0.8);
+          }
+        }
+        & p {
+          width: 200px;
+          padding-top: 10px;
+          padding-left: 5px;
+          font-family: 'Courier New', monospace;
+        }
+      }
     }
   }
 }
 .detail-container {
   width: 60%;
-  margin: 0 auto;
+  margin: $header-height+$breadcrumb-height auto 0;
 
   & .breadcrumb {
-    margin-top: $breadcrumb-height;
 
     & .crumb {
       position: relative;
