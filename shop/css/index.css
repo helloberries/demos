@@ -1,5 +1,6 @@
 @import url(normalize.css);
 /* Variables */
+/** Slider*/
 /** Breadcrumb*/
 /** product-preview*/
 /** product-dscp*/
@@ -162,7 +163,11 @@ section {
       height: 450px;
       margin: 0 auto; }
       .index-container .slider .slide-container .slide {
-        height: inherit; }
+        position: absolute;
+        z-index: 1;
+        width: 5600px;
+        height: 450px;
+        left: -800px; }
         .index-container .slider .slide-container .slide img {
           float: left; }
       .index-container .slider .slide-container .buttons {
@@ -182,10 +187,9 @@ section {
           -moz-border-radius: 50%;
           border-radius: 50%;
           background: rgba(0, 0, 0, 0.5);
-          border: 1px solid #eee;
           cursor: pointer; }
-          .index-container .slider .slide-container .buttons span .on {
-            background: red; }
+        .index-container .slider .slide-container .buttons .on {
+          background: #fff; }
       .index-container .slider .slide-container .arrow {
         position: absolute;
         z-index: 2;
@@ -242,17 +246,26 @@ section {
               height: 2px;
               background-color: #000; }
           .index-container .news .hot-container .hot .hot-content .hot-news {
+            position: relative;
+            width: 200px;
+            height: 60px;
             font-family: 'Spinnaker', monospace; }
             .index-container .news .hot-container .hot .hot-content .hot-news a:link, .index-container .news .hot-container .hot .hot-content .hot-news a:visited {
-              display: inline-block;
-              width: 200px;
-              height: 60px;
-              padding-top: 10px;
-              padding-left: 5px;
+              position: absolute;
+              display: block;
+              width: 100%;
+              top: 50%;
+              left: 50%;
+              -webkit-transform: translate(-50%, -50%);
+              -moz-transform: translate(-50%, -50%);
+              -ms-transform: translate(-50%, -50%);
+              -o-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
               color: #000; }
-            .index-container .news .hot-container .hot .hot-content .hot-news a:hover {
-              color: #fff;
+            .index-container .news .hot-container .hot .hot-content .hot-news:hover {
               background-color: rgba(0, 0, 0, 0.8); }
+            .index-container .news .hot-container .hot .hot-content .hot-news:hover a {
+              color: #fff; }
     .index-container .news .featured {
       float: right;
       width: 50%;
@@ -279,18 +292,28 @@ section {
             height: 2px;
             background-color: #000; }
         .index-container .news .featured .hot-content .article-title {
+          position: relative;
+          display: block;
+          width: 200px;
+          height: 60px;
           font-family: 'Spinnaker', monospace;
           text-transform: uppercase; }
           .index-container .news .featured .hot-content .article-title a:link, .index-container .news .featured .hot-content .article-title a:visited {
-            display: inline-block;
-            width: 200px;
-            height: 60px;
-            padding-top: 10px;
-            padding-left: 5px;
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            -webkit-transform: translate(-50%, -50%);
+            -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            -o-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
             color: #000; }
-          .index-container .news .featured .hot-content .article-title a:hover {
-            color: #fff;
+          .index-container .news .featured .hot-content .article-title:hover {
             background-color: rgba(0, 0, 0, 0.8); }
+          .index-container .news .featured .hot-content .article-title:hover a {
+            color: #fff; }
         .index-container .news .featured .hot-content p {
           width: 200px;
           padding-top: 10px;

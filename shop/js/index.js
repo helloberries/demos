@@ -12,40 +12,86 @@ $(function(){
         $('.nav-menu').hide();
     });
     // 首页轮播图
-    var picArr = $('#slide img');
-    $('#slide').css('width', picArr.length * 800);
-    function next () {
-      $('#slide img:first-child').animate({
-        marginLeft: '-800px'
-      }, 1000, function () {
-        var temp = $(this).clone();
-        $(this).remove();
-        temp.css({marginLeft:'0'});
-        $('#slide').append(temp);
+    var container = $('#slide-container'),
+        list = $('#slide'),
+        buttons = $('#buttons span'),
+        prev = $('#prev'),
+        next = $('#next'),
+        index = 1,
+        len = 5,
+        interval = 3000,
+        timer;
+
+    function showButton () {
+      buttons.eq(index-1).addClass('on').siblings().removeClass('on');
+    }
+    function animate(offset) {
+      var left = parseInt(list.css('left')) + offset;
+      if (offset > 0) {
+        offset = '+=' + offset;
+      } else {
+        offset = '-=' + Math.abs(offset);
+      }
+      list.animate({'left': offset}, 300, function () {
+        if (left > -800) {
+          list.css('left', -800 * len);
+        } else if (left < (-800 * len)) {
+          list.css('left', -800);
+        }
       });
     }
-    function prev () {
-      var temp = $('#slide img:first-child').clone();
-      $('#slide img:first-child').remove();
-      temp.css({marginLeft: '-800px'});
-      $('#slide').prepend(temp);
-      $('#slide img:first-child').animate({
-        marginLeft: '0'
-      }, 1000);
+
+    function play () {
+      timer = setTimeout(function () {
+        next.trigger('click');
+        play();
+      }, interval);
     }
-    var intervalObj = window.setInterval(next, 2000);
-    $('#slide-container').mouseover(function () {
-      window.clearInterval(intervalObj);
+    function stop () {
+      clearTimeout(timer);
+    }
+
+    next.bind('click', function(){
+      if (list.is(':animated')) {
+        return;
+      }
+      if (index === 5) {
+        index = 1;
+      } else {
+        index ++;
+      }
+      animate(-800);
+      showButton();
     });
-    $('#slide-container').mouseout(function () {
-      intervalObj = window.setInterval(next, 2000);
+    prev.bind('click', function(){
+      if (list.is(':animated')) {
+        return;
+      }
+      if (index === 1) {
+        index = 5;
+      } else {
+        index --;
+      }
+      animate(800);
+      showButton();
     });
-    $('#prev').click(function () {
-      prev();
+    buttons.each(function () {
+      $(this).bind('click',function () {
+        if (list.is(':animated') || $(this).attr('class') === 'on') {
+          return;
+        }
+        var myIndex = parseInt($(this).attr('index')); //目标索引
+        var offset = -800 * (myIndex - index); //目标索引减去当前索引
+
+        animate(offset);
+        index = myIndex;
+        showButton();
+      });
     });
-    $('#next').click(function () {
-      next();
-    });
+
+
+    container.hover(stop, play);
+    play();
     // 点击小图切换商品图
     $('.product-preview-img-s img').click(function () {
       var src = $(this).attr('src');

@@ -7,6 +7,10 @@ $header-height: 60px;
 $header-font-size: 30px;
 $nav-link-width: 200px;
 $nav-color: #a8a8a8;
+// INDEX
+/** Slider*/
+$slide-width: 800px;
+$slide-height: 450px;
 // SECTION
 /** Breadcrumb*/
 $breadcrumb-height: 30px;
@@ -215,12 +219,17 @@ section {
     & .slide-container {
       position: relative;
       overflow: hidden;
-      width: 800px;
-      height: 450px;
+      width: $slide-width;
+      height: $slide-height;
       margin: 0 auto;
 
       & .slide {
-        height: inherit;
+        position: absolute;
+        z-index: 1;
+        width: $slide-width * 7;
+        height: $slide-height;
+        left: -$slide-width;
+        // @include transition(left 1s ease-out);
 
         & img {
           float: left;
@@ -241,13 +250,11 @@ section {
           height: 10px;
           margin-right: 10px;
           @include border-radius(50%);
-          background: rgba(0, 0, 0, .5);;
-          border: 1px solid #eee;
+          background: rgba(0, 0, 0, .5);
           cursor: pointer;
-
-          & .on {
-            background: red;
-          }
+        }
+        & .on {
+          background: #fff;
         }
       }
       & .arrow {
@@ -320,19 +327,25 @@ section {
             }
           }
           & .hot-news {
+            position: relative;
+            width: 200px;
+            height: 60px;
             font-family: 'Spinnaker', monospace;
 
             & a:link, a:visited {
-              display: inline-block;
-              width: 200px;
-              height: 60px;
-              padding-top: 10px;
-              padding-left: 5px;
+              position: absolute;
+              display: block;
+              width: 100%;
+              top: 50%;
+              left: 50%;
+              @include transform(translate(-50%,-50%));
               color: #000;
             }
-            & a:hover {
-              color: #fff;
+            &:hover {
               background-color: rgba(0,0,0, 0.8);
+            }
+            &:hover a {
+              color: #fff;
             }
           }
         }
@@ -369,20 +382,27 @@ section {
           }
         }
         & .article-title {
+          position: relative;
+          display: block;
+          width: 200px;
+          height: 60px;
           font-family: 'Spinnaker', monospace;
           text-transform: uppercase;
 
           & a:link, a:visited {
-            display: inline-block;
-            width: 200px;
-            height: 60px;
-            padding-top: 10px;
-            padding-left: 5px;
+            position: absolute;
+            display: block;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            @include transform(translate(-50%,-50%));
             color: #000;
           }
-          & a:hover {
-            color: #fff;
+          &:hover {
             background-color: rgba(0,0,0, 0.8);
+          }
+          &:hover a {
+            color: #fff;
           }
         }
         & p {
