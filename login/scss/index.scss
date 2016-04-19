@@ -1,0 +1,133 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+}
+a, span, label, button {
+  display: inline-block;
+}
+a {
+  text-decoration: none;
+}
+input, button {
+  border: none;
+  outline: none;
+}
+.clearfix {
+  overflow: auto;
+  zoom: 1;
+}
+/* FONT */
+body {
+  font-family: 'Microsoft Yahei', sans-serif;
+  background-color: #016DB5;
+}
+
+/* STYLE */
+.container {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 10%;
+
+  .logobox {
+    float: left;
+    width: 30%;
+    & .logo {
+      width: 100%;
+      margin: 0 auto;
+
+      & h1 {
+        float: right;
+        color: #fff;
+      }
+    }
+  }
+
+  .loginbox {
+    position: relative;
+    float: right;
+    width: 420px;
+    height: 329px;
+    background-color: #fefefe;
+    border: 1px solid #fefefe;
+    border-radius: 5px;
+
+    & .login-title {
+      width: 60%;
+      height: 60px;
+      margin: 0 auto;
+      text-align: center;
+
+      & span {
+        margin: 0 10px;
+        padding: 0 10px;
+        padding-top: 40px;
+        border-bottom: 2px solid #016DB5;
+        cursor: pointer;
+
+        & a:link, & a:visited {
+          color: #000;
+        }
+
+        &:last-child {
+          border-bottom: none;
+
+          & a:link, & a:visited {
+            color: #666;
+          }
+        }
+      }
+    }
+    & form {
+      width: 90%;
+      height: 214px;
+      margin: 0 auto;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee;
+
+      & .login-form {
+        width: 70%;
+        margin: 0 auto;
+        padding-top: 40px;
+        & input {
+          width: 202px;
+          height: 34px;
+          margin-left: 5px;
+          margin-bottom: 15px;
+          text-indent: 1em;
+          border: 1px solid #eee;
+        }
+        & button {
+          width: 147px;
+          height: 42px;
+          margin-left: 60px;
+          font-size: 1.2em;
+          color: #fff;
+          background-color: #016DB5;
+        }
+      }
+    }
+    & .findpw {
+      position: absolute;
+      right: 20px;
+      font-size: .8em;
+    }
+    & .findpw:link, & .findpw:visited {
+      color: #666;
+    }
+  }
+}
+/* footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  & .footer {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    color: #fefefe;
+    text-align: center;
+  }
+}

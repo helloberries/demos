@@ -1,0 +1,107 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0; }
+
+a, span, label, button {
+  display: inline-block; }
+
+a {
+  text-decoration: none; }
+
+input, button {
+  border: none;
+  outline: none; }
+
+.clearfix {
+  overflow: auto;
+  zoom: 1; }
+
+/* FONT */
+body {
+  font-family: 'Microsoft Yahei', sans-serif;
+  background-color: #016DB5; }
+
+/* STYLE */
+.container {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 10%; }
+  .container .logobox {
+    float: left;
+    width: 30%; }
+    .container .logobox .logo {
+      width: 100%;
+      margin: 0 auto; }
+      .container .logobox .logo h1 {
+        float: right;
+        color: #fff; }
+  .container .loginbox {
+    position: relative;
+    float: right;
+    width: 420px;
+    height: 329px;
+    background-color: #fefefe;
+    border: 1px solid #fefefe;
+    border-radius: 5px; }
+    .container .loginbox .login-title {
+      width: 60%;
+      height: 60px;
+      margin: 0 auto;
+      text-align: center; }
+      .container .loginbox .login-title span {
+        margin: 0 10px;
+        padding: 0 10px;
+        padding-top: 40px;
+        border-bottom: 2px solid #016DB5;
+        cursor: pointer; }
+        .container .loginbox .login-title span a:link, .container .loginbox .login-title span a:visited {
+          color: #000; }
+        .container .loginbox .login-title span:last-child {
+          border-bottom: none; }
+          .container .loginbox .login-title span:last-child a:link, .container .loginbox .login-title span:last-child a:visited {
+            color: #666; }
+    .container .loginbox form {
+      width: 90%;
+      height: 214px;
+      margin: 0 auto;
+      border-top: 1px solid #eee;
+      border-bottom: 1px solid #eee; }
+      .container .loginbox form .login-form {
+        width: 70%;
+        margin: 0 auto;
+        padding-top: 40px; }
+        .container .loginbox form .login-form input {
+          width: 202px;
+          height: 34px;
+          margin-left: 5px;
+          margin-bottom: 15px;
+          text-indent: 1em;
+          border: 1px solid #eee; }
+        .container .loginbox form .login-form button {
+          width: 147px;
+          height: 42px;
+          margin-left: 60px;
+          font-size: 1.2em;
+          color: #fff;
+          background-color: #016DB5; }
+    .container .loginbox .findpw {
+      position: absolute;
+      right: 20px;
+      font-size: .8em; }
+    .container .loginbox .findpw:link, .container .loginbox .findpw:visited {
+      color: #666; }
+
+/* footer */
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%; }
+  footer .footer {
+    width: 80%;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    color: #fefefe;
+    text-align: center; }
+
+/*# sourceMappingURL=index.css.map */
