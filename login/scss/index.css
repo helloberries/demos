@@ -43,6 +43,8 @@ body {
     height: 329px;
     background-color: #fefefe;
     border: 1px solid #fefefe;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
     border-radius: 5px; }
     .container .loginbox .login-title {
       width: 60%;
