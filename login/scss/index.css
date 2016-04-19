@@ -50,12 +50,13 @@ body {
       margin: 0 auto;
       text-align: center; }
       .container .loginbox .login-title span {
+        height: 60px;
         margin: 0 10px;
         padding: 0 10px;
-        padding-top: 40px;
         border-bottom: 2px solid #016DB5;
         cursor: pointer; }
         .container .loginbox .login-title span a:link, .container .loginbox .login-title span a:visited {
+          margin-top: 30px;
           color: #000; }
         .container .loginbox .login-title span:last-child {
           border-bottom: none; }
