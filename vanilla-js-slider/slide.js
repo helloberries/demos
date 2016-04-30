@@ -29,4 +29,85 @@ var prev = document.getElementById('prev'),
     fade = false; // 布尔值，防止连续快速点击造成卡顿
 
 // 设置透明度，渐变
-var setOpacity = function() {};
+var setOpacity = function(obj, opa) {
+  if (obj.filters) {
+    obj.style.filter = "alpha(opacity:" + opa + ")";
+  } else {
+    obj.style.opacity = opa / 100;
+  }
+};
+
+// 渐入函数，为下一张（即将显示的）图片所用
+var fadeIn = function(obj) {
+  fade = true;
+  obj.style.display = "block";
+  var opa = 0;
+  var timer = setInterval(func, 1); //数字控制速度
+  function func() {
+    if (opa < 100) {
+      opa += 2; //改变数字控制速度
+      setOpacity(obj, opa);
+    } else {
+      clearInterval(timer);
+      fade = false;
+    }
+  }
+};
+
+//淡出函数 为即将隐藏的眼前图片所用
+var fadeOut = function(obj) {
+  fade = true;
+  var opa = 100;
+  var timer = setInterval(func, 1);
+  function func() {
+    if (opa > 0) {
+      opa -= 1;
+      setOpacity(obj, opa);
+    } else {
+      clearInterval(timer);
+      obj.style.display = 'none';
+    }
+  }
+};
+
+// 切换图片时小圆点跟着切换焦点
+function lightdot() {
+  for (var i=0; i<n; i++) {
+    if (hasClass(dot[i], 'on')) {
+      rvClass(dot[i], 'on');
+      break;
+    }
+  }
+  addClass(dot[index], 'on');
+}
+
+// 点击下一张切换
+next.onclick = function() {
+  if (fade) {
+    return;
+  } else {
+    fadeOut(slidepics[index]);
+    index += 1;
+    if (index === n) {
+      index = 0;
+    }
+    fadeIn(slidepics[index]);
+    lightdot();
+  }
+};
+
+//点击上一张切换
+//
+prev.onclick = function() {
+  if (fade) {
+    return;
+  } else {
+    fadeOut(imglist[index]);
+    if (index === 0) {
+      index = n;
+    }
+    index -= 1;
+    fadeIn(imglist[index]);
+    lightdot();
+  }
+};
