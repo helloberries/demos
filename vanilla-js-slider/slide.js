@@ -22,9 +22,9 @@ var rvClass = function(obj, cls) {
 /* 开始 */
 var prev = document.getElementById('prev'),
     next = document.getElementById('next'),
-    slidepics = document.getElementById('slide').getElementsByTagName('li'),
-    dots = document.getElementById('dot').getElementsByTagName('li'),
-    n = slidepics.length,
+    imglist = document.getElementById('imglist').getElementsByTagName('li'),
+    dot = document.getElementById('dot').getElementsByTagName('li'),
+    n = imglist.length,
     index = 0, // 眼前图片的顺序值
     fade = false; // 布尔值，防止连续快速点击造成卡顿
 
@@ -86,18 +86,17 @@ next.onclick = function() {
   if (fade) {
     return;
   } else {
-    fadeOut(slidepics[index]);
+    fadeOut(imglist[index]);
     index += 1;
     if (index === n) {
       index = 0;
     }
-    fadeIn(slidepics[index]);
+    fadeIn(imglist[index]);
     lightdot();
   }
 };
 
 //点击上一张切换
-//
 prev.onclick = function() {
   if (fade) {
     return;
@@ -111,3 +110,32 @@ prev.onclick = function() {
     lightdot();
   }
 };
+
+// 小圆点控制切换
+for (var i = 0; i < n; i++) {
+  dot[i].order = i;
+  dot[i].onclick = function() {
+    // 添加控制
+    if(this.order===index){return;}
+    else{
+        fadeOut(imglist[index]);
+        index = this.order;
+        fadeIn(imglist[index]);
+        lightdot();
+      }
+};
+}
+
+//自动播放启停
+function play() {
+  auto = setInterval(function() {
+    next.onclick();
+  },
+  3000);
+}
+function stop() {
+  clearInterval(auto);
+}
+play();
+container.onmouseover = stop;
+container.onmouseout = play;
