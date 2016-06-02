@@ -24,6 +24,7 @@ var prev = document.getElementById('prev'),
     next = document.getElementById('next'),
     imglist = document.getElementById('imglist').getElementsByTagName('li'),
     dot = document.getElementById('dot').getElementsByTagName('li'),
+    container = document.getElementById('container'),
     n = imglist.length,
     index = 0, // 眼前图片的顺序值
     fade = false; // 布尔值，防止连续快速点击造成卡顿
