@@ -1,3 +1,6 @@
+//
+//    BY helloberries@Github
+//
 $(function(){
     /* 搜索 */
     $('#search').keyup(function (e) {
